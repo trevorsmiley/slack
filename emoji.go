@@ -48,7 +48,7 @@ func (api *Client) AddEmojiContext(ctx context.Context, image, name string) erro
 	}
 	response := &emojiResponseFull{}
 
-	err := postLocalWithMultipartResponse(ctx, api.httpclient, "emoji.add", image, "image", values, response, api)
+	err := postLocalWithMultipartResponse(ctx, api.httpclient, api.endpoint+"emoji.add", image, "image", values, response, api)
 
 	if err != nil {
 		return err
